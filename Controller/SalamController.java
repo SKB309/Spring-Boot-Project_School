@@ -59,7 +59,7 @@ public class SalamController {
         students = studentServices.getAllStudents();
         return students;
     }
-//test
+//testghdfhdfhdfhngngdf
     @RequestMapping(value = "student/getById", method = RequestMethod.GET)
     public Student getStudentsById(@RequestParam Integer studentId) {
         Student students = studentServices.getStudentsById(studentId);
