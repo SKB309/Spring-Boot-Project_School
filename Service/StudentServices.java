@@ -48,16 +48,27 @@ public class StudentServices {
 
         return studentRepositories.getStudentsByStudentName(studentName);
     }
-@Autowired
-    SchoolRepository schoolRepository;
-    @Autowired
-    StudentRepositories studentRepository;
 
-    public List<Student> getStudentsBySchoolName(String schoolName){
-        School school = schoolRepository.getBySchoolName(schoolName);
-        Integer schoolId = school.getSchoolId();
-        List<Student> studentList = studentRepository.getStudentsBySchoolId(schoolId);
-        return studentList;
+    @Autowired
+    SchoolRepository schoolRepository;
+//    @Autowired
+//    StudentRepositories studentRepository;
+//
+//    public List<Student> getStudentsBySchoolName(String schoolName) {
+//        Student student = schoolRepository.getBySchoolName(schoolName);
+//        Integer student = school.getSchoolId();
+//        List<Student> studentList = studentRepository.getStudentsBySchoolId(schoolId);
+//        return studentList;
+//    }
+
+
+    public List<Student> getstudentByIsActive(boolean isActive) {
+
+        List<Student> schoolName = studentRepositories.getstudentByIsActive(isActive);
+
+        return studentRepositories.getstudentByIsActive(isActive);
+
+
     }
 
 

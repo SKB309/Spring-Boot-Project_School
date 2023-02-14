@@ -4,12 +4,24 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Student {
+public class Student extends BaseEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer studentId;
     String studentName;
     String rollNumber;
+
+    Boolean isActive;
+
+    @Override
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    @Override
+    public void setActive(Boolean active) {
+        isActive = active;
+    }
 
     @ManyToOne
     @JoinColumn(name = "school_id", referencedColumnName = "schoolId")

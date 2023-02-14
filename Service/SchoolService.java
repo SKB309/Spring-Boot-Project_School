@@ -38,4 +38,15 @@ public class SchoolService {
 
     }
 
+    public List<School> getSchoolByIsActive (boolean isActive){
+
+        List<School> schoolName= schoolRepository.getSchoolByIsActive(isActive);
+
+        return schoolRepository.getSchoolByIsActive(isActive);
+
+
+    }
+
+
+
 }

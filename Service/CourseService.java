@@ -3,6 +3,7 @@ package com.codeline.firstSpringDemo.Service;
 
 import com.codeline.firstSpringDemo.Models.Course;
 import com.codeline.firstSpringDemo.Models.School;
+import com.codeline.firstSpringDemo.Models.Student;
 import com.codeline.firstSpringDemo.Repositories.CourseRepository;
 import com.codeline.firstSpringDemo.Repositories.SchoolRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +31,22 @@ public class CourseService {
     }
 
 
-    public Course getByCourseName (String courseName){
+    public Course getByCourseName(String courseName) {
         Course course = new Course();
 
-        Course schoolName1= courseRepository.getByCourseName(courseName);
         return courseRepository.getByCourseName(courseName);
 
 
     }
+
+
+    public List<Course> getCourseByIsActive(boolean isActive) {
+
+        List<Course> course = courseRepository.getCourseByIsActive(isActive);
+
+        return courseRepository.getCourseByIsActive(isActive);
+
+
+    }
+
 }

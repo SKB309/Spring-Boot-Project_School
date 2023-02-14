@@ -5,16 +5,26 @@ import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
 import java.util.List;
+
 @Entity
-public class School {
+public class School extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer schoolId;
-@Column(name = "school_name")
+    @Column(name = "school_name")
     String nameOfSchool;
-//@OneToMany
-//@JoinColumn(referencedColumnName = "id")
-//    List<Student>student;
+
+    Boolean isActive;
+
+    @Override
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    @Override
+    public void setActive(Boolean active) {
+        isActive = active;
+    }
 
     public Integer getSchoolId() {
         return schoolId;
@@ -31,16 +41,6 @@ public class School {
     public void setNameOfSchool(String nameOfSchool) {
         this.nameOfSchool = nameOfSchool;
     }
-
-//    public List<Student> getStudent() {
-//        return student;
-//    }
-//
-//    public void setStudent(List<Student> student) {
-//        this.student = student;
-//    }
-
-
 
 
 }

@@ -1,25 +1,37 @@
 package com.codeline.firstSpringDemo.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+
+import javax.persistence.*;
 import java.util.Date;
-@Entity
+
+@MappedSuperclass
 public class BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer baseEntityId;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    Integer baseEntityId;
+
+    @CreatedDate
     Date createDate;
+    @UpdateTimestamp
     Date updateDate;
+    Boolean isActive;
 
-    public Integer getBaseEntityId() {
-        return baseEntityId;
+    public Boolean getActive() {
+        return isActive;
     }
 
-    public void setBaseEntityId(Integer baseEntityId) {
-        this.baseEntityId = baseEntityId;
+    public void setActive(Boolean active) {
+        isActive = active;
     }
+//    public Integer getBaseEntityId() {
+//        return baseEntityId;
+//    }
+//
+//    public void setBaseEntityId(Integer baseEntityId) {
+//        this.baseEntityId = baseEntityId;
+//    }
 
     public Date getCreateDate() {
         return createDate;

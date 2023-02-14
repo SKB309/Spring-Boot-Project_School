@@ -29,6 +29,10 @@ public interface StudentRepositories extends CrudRepository<Student, Integer> {
     List<Student> getStudentsBySchoolId(@Param("id") Integer id);
 
 
+    @Query(value = "SELECT s from Student s where s.isActive = :isActive")
+    List<Student> getstudentByIsActive(@Param("isActive") boolean isActive);
+
+
 }
 
 

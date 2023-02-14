@@ -3,7 +3,7 @@ package com.codeline.firstSpringDemo.Models;
 import javax.persistence.*;
 
 @Entity
-public class Course {
+public class Course extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer courseId;
@@ -11,6 +11,20 @@ public class Course {
     @ManyToOne
     @JoinColumn(name = "student_id", referencedColumnName = "studentId")
     Student student;
+
+
+    boolean isActive;
+
+
+
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
 
     public Integer getCourseId() {
         return courseId;
