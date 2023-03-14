@@ -3,11 +3,11 @@ package com.codeline.firstSpringDemo.Controller;
 import com.codeline.firstSpringDemo.Models.Mark;
 import com.codeline.firstSpringDemo.Service.MarkService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,14 +21,14 @@ public class MarkController {
     MarkService markService;
 
 
-    @RequestMapping(value = "mark/getAll", method = RequestMethod.GET)
+    @RequestMapping(value = "getAll", method = RequestMethod.GET)
     public List<Mark> getAllMarks() {
         List<Mark> marks = new ArrayList<>();
         marks = markService.getAllMarks();
         return marks;
     }
 
-    @RequestMapping(value = "mark/getById", method = RequestMethod.GET)
+    @RequestMapping(value = "getById", method = RequestMethod.GET)
     public Mark getMarksById(@RequestParam Integer markId) {
         Mark marks = markService.getMarksById(markId);
         return marks;
@@ -36,11 +36,13 @@ public class MarkController {
 
     }
 
-    @RequestMapping(value = "mark/getByName", method = RequestMethod.GET)
+    @RequestMapping(value = "getByName", method = RequestMethod.GET)
     public Mark getByMarkName(@RequestParam String grade) {
         Mark marks = markService.getByMarkName(grade);
         return marks;
     }
+
+
 
 
 }

@@ -27,6 +27,10 @@ public interface CourseRepository extends CrudRepository<Course, Integer> {
     @Query(value = "SELECT s from Course s where s.isActive = :isActive")
     List<Course> getCourseByIsActive(@Param("isActive") boolean isActive);
 
+
+
+
+
 }
 
 

@@ -4,6 +4,9 @@ import jdk.jfr.DataAmount;
 import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -15,6 +18,19 @@ public class School extends BaseEntity {
     String nameOfSchool;
 
     Boolean isActive;
+
+
+    Date date;
+
+
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     @Override
     public Boolean getActive() {

@@ -8,6 +8,7 @@ import com.codeline.firstSpringDemo.Repositories.StudentRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -49,19 +50,19 @@ public class StudentServices {
         return studentRepositories.getStudentsByStudentName(studentName);
     }
 
-    @Autowired
-    SchoolRepository schoolRepository;
+
 //    @Autowired
 //    StudentRepositories studentRepository;
 //
 //    public List<Student> getStudentsBySchoolName(String schoolName) {
 //        Student student = schoolRepository.getBySchoolName(schoolName);
-//        Integer student = school.getSchoolId();
+//        String student = school.getSchoolId();
 //        List<Student> studentList = studentRepository.getStudentsBySchoolId(schoolId);
 //        return studentList;
 //    }
 
-
+    @Autowired
+    SchoolRepository schoolRepository;
     public List<Student> getstudentByIsActive(boolean isActive) {
 
         List<Student> schoolName = studentRepositories.getstudentByIsActive(isActive);
@@ -70,6 +71,34 @@ public class StudentServices {
 
 
     }
+//
+//    public School getSchoolsByLatestRow() {
+//        School schoolRow = schoolRepository.getSchoolsByLatestRow();
+//        return schoolRepository.getSchoolsByLatestRow();
+//    }
+//
+//    public School getSchoolsByLastUpdate() {
+//        School schoolUpdate1 = schoolRepository.getSchoolsByLastUpdate();
+//        return schoolRepository.getSchoolsByLastUpdate();
+//    }
+//
+//
+//    public List<School> getSchoolCreatedAfterDate(Date date) {
+//        return schoolRepository.getSchoolCreatedAfterDate(date);
+//    }
+//
+//    public List<School> getSchoolByCreatedDate(Date date) {
+//
+//        School school = new School();
+//
+//        return schoolRepository.getSchoolByCreatedDate(date);
+//    }
+//
+//    public List<School> getSchoolByUpdatedDate(Date date) {
+//        School school = new School();
+//
+//        return schoolRepository.getSchoolByUpdatedDate(date);
+//    }
 
 
 }
