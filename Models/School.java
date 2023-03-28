@@ -20,27 +20,10 @@ public class School extends BaseEntity {
     Boolean isActive;
 
 
+    Boolean unActive;
+
+
     Date date;
-
-
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    @Override
-    public Boolean getActive() {
-        return isActive;
-    }
-
-    @Override
-    public void setActive(Boolean active) {
-        isActive = active;
-    }
 
     public Integer getSchoolId() {
         return schoolId;
@@ -59,4 +42,28 @@ public class School extends BaseEntity {
     }
 
 
+    public Boolean getIsActive() {
+        return isActive;
+    }
+
+
+    public void setIsActive(Boolean isActive) {
+        this.isActive = isActive;
+    }
+
+    public Boolean getUnActive() {
+        return unActive;
+    }
+
+    public void setUnActive(Boolean unActive) {
+        this.unActive = unActive;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }

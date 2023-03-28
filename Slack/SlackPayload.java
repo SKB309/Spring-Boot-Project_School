@@ -1,4 +1,4 @@
-package com.codeline.firstSpringDemo.Models.Slack;
+package com.codeline.firstSpringDemo.Slack;
 
 import lombok.Data;
 import lombok.Getter;

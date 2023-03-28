@@ -35,6 +35,8 @@ public class CourseController {
     }
 
 
+
+
     @RequestMapping(value = "getByName", method = RequestMethod.GET)
     public Course getByCourseName(@RequestParam String courseName) {
         Course courses = courseService.getByCourseName(courseName);
@@ -47,7 +49,6 @@ public class CourseController {
         return courses;
 
     }
-
 
 
 

@@ -2,7 +2,6 @@ package com.codeline.firstSpringDemo.Service;
 
 import com.codeline.firstSpringDemo.Models.School;
 import com.codeline.firstSpringDemo.Repositories.SchoolRepository;
-import com.codeline.firstSpringDemo.Repositories.StudentRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -46,6 +45,17 @@ public class SchoolService {
         List<School> schoolName = schoolRepository.getSchoolByIsActive(isActive);
 
         return schoolRepository.getSchoolByIsActive(isActive);
+
+
+    }
+
+    public List<School> getUnActive(boolean unActive) {
+
+        School school = new School();
+
+        List<School> schoolName = schoolRepository.getSchoolByUnActive(unActive);
+
+        return schoolRepository.getSchoolByUnActive(unActive);
 
 
     }

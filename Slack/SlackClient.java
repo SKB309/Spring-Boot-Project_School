@@ -1,4 +1,4 @@
-package com.codeline.firstSpringDemo.Models.Slack;
+package com.codeline.firstSpringDemo.Slack;
 
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class SlackClient {
     public String sendMessage(String text) {
         return WebClient.create().post()
-                .uri("https://hooks.slack.com/services/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")
+                .uri("https://hooks.slack.com/services/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")
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(new SlackPayload(text))
                 .retrieve()
@@ -16,4 +16,3 @@ public class SlackClient {
                 .block();
     }
 }
-//wdsdsdsd

@@ -1,8 +1,7 @@
 package com.codeline.firstSpringDemo.Controller;
 
-import com.codeline.firstSpringDemo.Models.Slack.SlackClient;
+import com.codeline.firstSpringDemo.Slack.SlackClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

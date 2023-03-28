@@ -29,6 +29,9 @@ public interface SchoolRepository extends JpaRepository<School, Integer> {
     @Query(value = "SELECT s from School s where s.isActive = :isActive")
     List<School> getSchoolByIsActive(@Param("isActive") boolean isActive);
 
+    @Query(value = "SELECT s from School s where s.unActive = :unActive")
+    List<School> getSchoolByUnActive(@Param("unActive") boolean unActive);
+
     @Query(value = "SELECT  *  FROM  school  WHERE  create_date = (select Max(create_date) from  school )", nativeQuery = true)
     School getSchoolsByLatestRow();
 
